@@ -1,0 +1,49 @@
+@SimpleDispatch.GeoService_HostAddress = https://localhost:7298
+@SimpleDispatch.GeoService_HostAddress_Http = http://localhost:5299
+
+### Health Check
+GET {{SimpleDispatch.GeoService_HostAddress}}/api/geoservice/health
+Accept: application/json
+
+### Get Location by Coordinates
+GET {{SimpleDispatch.GeoService_HostAddress}}/api/geoservice/location?latitude=47.6062&longitude=-122.3321
+Accept: application/json
+
+### Geocode Address
+GET {{SimpleDispatch.GeoService_HostAddress}}/api/geoservice/geocode?address=1600 Amphitheatre Parkway, Mountain View, CA
+Accept: application/json
+
+### Autocomplete Suggestions
+GET {{SimpleDispatch.GeoService_HostAddress}}/api/geoservice/autocomplete?text=seatt&focusLat=47.6062&focusLon=-122.3321&size=5
+Accept: application/json
+
+### Autocomplete with Layers Filter
+GET {{SimpleDispatch.GeoService_HostAddress}}/api/geoservice/autocomplete?text=star&layers=venue,address&size=10
+Accept: application/json
+
+### Search Places
+GET {{SimpleDispatch.GeoService_HostAddress}}/api/geoservice/search?query=coffee shop&focusLat=47.6062&focusLon=-122.3321
+Accept: application/json
+
+### Calculate Distance Between Two Points
+POST {{SimpleDispatch.GeoService_HostAddress}}/api/geoservice/distance
+Content-Type: application/json
+Accept: application/json
+
+{
+  "origin": {
+    "latitude": 47.6062,
+    "longitude": -122.3321,
+    "address": "Seattle, WA"
+  },
+  "destination": {
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "address": "San Francisco, CA"
+  }
+}eDispatch.GeoService_HostAddress = http://localhost:5216
+
+GET {{SimpleDispatch.GeoService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
